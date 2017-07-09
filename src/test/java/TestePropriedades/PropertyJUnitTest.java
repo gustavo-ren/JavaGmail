@@ -36,6 +36,7 @@ public class PropertyJUnitTest {
     
     @After
     public void tearDown() {
+        p=null;
     }
 
     // TODO add test methods here.
@@ -45,10 +46,20 @@ public class PropertyJUnitTest {
     // public void hello() {}
     
     @Test
-    public void testProperties() throws IOException{
+    public void testPropertiesPort() throws IOException{
         PropertiesGenerator pg=new PropertiesGenerator();
         p=pg.getProp();
         
         assertEquals(p.getProperty("mail.smtp.port"), "587");
+        
     }
+    
+    @Test
+    public void testStartTls() throws IOException{
+        PropertiesGenerator pg=new PropertiesGenerator();
+        p=pg.getProp();
+        
+        assertEquals(p.getProperty("mail.smtp.starttls.enable"), "true");
+    }
+    
 }
