@@ -20,11 +20,13 @@ public class PropertiesGenerator {
 
     public Properties getProp() throws IOException {
         Properties props = new Properties();
+        FileInputStream file;
         try {
 
-            FileInputStream file = new FileInputStream(
+            file = new FileInputStream(
                     "./properties/email.properties");
             props.load(file);
+            file.close();
             return props;
         } catch (IOException e) {
             System.out.println("Não deu ");
