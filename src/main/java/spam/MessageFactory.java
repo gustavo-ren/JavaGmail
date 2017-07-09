@@ -1,5 +1,6 @@
 package spam;
 
+import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import java.util.Properties;
 import javax.mail.internet.MimeMessage;
 /**
@@ -16,9 +17,10 @@ public class MessageFactory {
      * @param body
      * @return
      */
-    public MimeMessage createMessage(String to, String from, String subject, String body){
+    public MimeMessage createMessage(String to, String from, String subject, String body) throws MessagingException{
         
         Properties props=new Properties();
+        
         
         
         return null;
